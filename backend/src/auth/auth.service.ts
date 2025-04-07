@@ -3,6 +3,7 @@ import {
   HttpException,
   HttpStatus,
   Injectable,
+  UnauthorizedException,
 } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
@@ -37,7 +38,7 @@ export class AuthService {
 
     // Hash mật khẩu
     const passwordHash = hashPassword(createUserDto.password);
-
+    console.log(hashPassword);
     // Tạo mới người dùng
     const user = await this.userModel.create({
       email: createUserDto.email,
@@ -97,6 +98,32 @@ export class AuthService {
     await userExists.save();
 
     return token;
+  }
+
+  /**
+   * Đăng xuất tài khoản
+   * @param refreshToken - RefreshToken
+   * @returns {Promise<{message:string}>} - Trả về thông báo
+   */
+  async logoutUser(refreshToken: string): Promise<{ message: string }> {
+    if (!refreshToken) {
+      throw new UnauthorizedException('Bạn chưa đăng nhập hoặc đã đăng xuất');
+    }
+
+    // Tìm user với refreshToken
+    const user = await this.userModel
+      .findOne({ refreshToken })
+      .select('refreshToken');
+
+    if (!user) {
+      throw new UnauthorizedException('Token không hợp lệ hoặc đã hết hạn');
+    }
+
+    // Xóa refreshToken trong database
+    user.refreshToken = undefined;
+    await user.save();
+
+    return { message: 'Đăng xuất thành công' };
   }
 
   /**

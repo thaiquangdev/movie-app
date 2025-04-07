@@ -40,6 +40,7 @@ async function bootstrap() {
     .setDescription('API for movie app')
     .setVersion('1.0')
     .addTag('auth')
+    .addTag('users')
     .build();
 
   const documentFactory = SwaggerModule.createDocument(app, config);
