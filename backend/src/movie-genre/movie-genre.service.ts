@@ -45,7 +45,7 @@ export class MovieGenreService {
    * @returns {Promise<Country[]>} - Trả về danh sách thể loại
    */
   async getMovieGenres(): Promise<MovieGenre[]> {
-    return this.movieGenreModel.find();
+    return await this.movieGenreModel.find();
   }
 
   /**
@@ -56,7 +56,7 @@ export class MovieGenreService {
    */
   async updateMovieGenre(
     id: string,
-    updateMovieGenre: UpdateMovieGenreDto,
+    updateMovieGenreDto: UpdateMovieGenreDto,
   ): Promise<{ message: string }> {
     // Kiểm tra thể loại có tồn tại trong hệ thống không
     const movieGenreExist = await this.findMovieGenreById(id);
@@ -66,9 +66,9 @@ export class MovieGenreService {
     }
 
     // Kiểm tra nếu tên thể loại đã tồn tại
-    if (updateMovieGenre.movieGenreName) {
+    if (updateMovieGenreDto.movieGenreName) {
       const movieGenreNameExist = await this.movieGenreModel.findOne({
-        movieGenreName: updateMovieGenre.movieGenreName,
+        movieGenreName: updateMovieGenreDto.movieGenreName,
         deletedAt: null,
         _id: { $ne: id },
       });
@@ -78,15 +78,15 @@ export class MovieGenreService {
       }
     }
 
-    const movieGenreSlug = updateMovieGenre.movieGenreName
-      ? slugify(updateMovieGenre.movieGenreName, { lower: true })
+    const movieGenreSlug = updateMovieGenreDto.movieGenreName
+      ? slugify(updateMovieGenreDto.movieGenreName, { lower: true })
       : movieGenreExist.movieGenreSlug;
 
     // Cập nhật thể loại
     await this.movieGenreModel.findByIdAndUpdate(
       id,
       {
-        movieGenreName: updateMovieGenre.movieGenreName,
+        movieGenreName: updateMovieGenreDto.movieGenreName,
         movieGenreSlug,
       },
       { new: true },

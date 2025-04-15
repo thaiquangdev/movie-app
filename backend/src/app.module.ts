@@ -10,6 +10,7 @@ import { CategoriesModule } from './categories/categories.module';
 import { RanksModule } from './ranks/ranks.module';
 import { MovieGenreModule } from './movie-genre/movie-genre.module';
 import { VersionsModule } from './versions/versions.module';
+import { YearOfManufactureModule } from './year-of-manufacture/year-of-manufacture.module';
 
 @Module({
   imports: [
@@ -27,6 +28,7 @@ import { VersionsModule } from './versions/versions.module';
     RanksModule,
     MovieGenreModule,
     VersionsModule,
+    YearOfManufactureModule,
   ],
   controllers: [],
   providers: [],

@@ -2,15 +2,16 @@ import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
 
 @Schema({ timestamps: true })
-export class Versions extends Document {
+export class YearOfManufacture extends Document {
   @Prop({ required: true, unique: true })
-  versionName: string;
+  yearOfManufactureName: string;
 
   @Prop({ required: true })
-  versionSlug: string;
+  yearOfManufactureSlug: string;
 
   @Prop({ required: false })
   deletedAt: Date;
 }
 
-export const VersionsSchema = SchemaFactory.createForClass(Versions);
+export const YearOfManuFactureSchema =
+  SchemaFactory.createForClass(YearOfManufacture);

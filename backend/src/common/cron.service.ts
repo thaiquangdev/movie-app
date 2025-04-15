@@ -3,6 +3,8 @@ import * as cron from 'node-cron';
 import { CategoriesService } from 'src/categories/categories.service';
 import { CountriesService } from 'src/countries/countries.service';
 import { TopicService } from 'src/topics/topics.service';
+import { VersionsService } from 'src/versions/versions.service';
+import { YearOfManufactureService } from 'src/year-of-manufacture/year-of-manufacture.service';
 
 @Injectable()
 export class CronService implements OnModuleInit {
@@ -12,6 +14,8 @@ export class CronService implements OnModuleInit {
     private readonly topicService: TopicService,
     private readonly countruyService: CountriesService,
     private readonly categoryService: CategoriesService,
+    private readonly versionService: VersionsService,
+    private readonly yearOfManufactureService: YearOfManufactureService,
   ) {}
 
   onModuleInit() {
@@ -58,6 +62,38 @@ export class CronService implements OnModuleInit {
         const deletedCount =
           await this.categoryService.permanentlyDeleteOldCategories();
         this.logger.log(`Đã xóa ${deletedCount} loại phim`);
+      })();
+    });
+  }
+
+  /**
+   * Xóa các phiên bản đã bị xóa ảo quá 30 ngày
+   */
+  startDeleteOldVerisonJob() {
+    cron.schedule('0 0 * * *', () => {
+      void (async () => {
+        this.logger.log(
+          'Chạy cron job: Xóa phiên bản đã bị xóa ảo quá 30 ngày',
+        );
+        const deletedCount =
+          await this.versionService.permanentlyDeleteOldVersions();
+        this.logger.log(`Đã xóa ${deletedCount} phiên bản`);
+      })();
+    });
+  }
+
+  /**
+   * Xóa các năm sản xuất đã bị xóa ảo quá 30 ngày
+   */
+  startDeleteOldYearOfManufactureJob() {
+    cron.schedule('0 0 * * *', () => {
+      void (async () => {
+        this.logger.log(
+          'Chạy cron job: Xóa năm sản xuất đã bị xóa ảo quá 30 ngày',
+        );
+        const deletedCount =
+          await this.yearOfManufactureService.permanentlyDeleteOldYearOfManufactures();
+        this.logger.log(`Đã xóa ${deletedCount} năm sản xuất`);
       })();
     });
   }
