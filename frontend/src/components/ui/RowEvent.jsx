@@ -6,7 +6,7 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const RowEvent = () => {
   return (
-    <div className="effect-fade-in ">
+    <div className="effect-fade-in">
       <div className="px-[20px]">
         <div className="xl:gap-2 w-full h-[350px] mt-[1rem] bg-[#fedaa8] rounded-[1rem] relative flex gap-4 items-center">
           <div className="absolute top-0 bottom-0 left-0 w-[600px] rounded-tl-[1rem] rounded-bl-[1rem] overflow-hidden hero-behind"></div>
