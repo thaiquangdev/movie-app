@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CardMovieNormal = () => {
   return (
-    <div className="w-full flex flex-col gap-3 pr-[16px] relative">
+    <div className="w-full flex flex-col gap-3 relative">
       <Link className="w-full pb-[150%] relative rounded-[0.5rem] overflow-hidden block bg-bg3">
         <div className="absolute bottom-0 left-[50%] translate-x-[-50%] z-30 flex justify-between items-stretch rounded-tl-[0.3rem] rounded-tr-[0.3rem] overflow-hidden shadow-md">
           <div className="flex-1 gap-[0.2rem] justify-center py-[0.2rem] px-2 text-[11px] font-normal bg-[#5e6070] text-white">

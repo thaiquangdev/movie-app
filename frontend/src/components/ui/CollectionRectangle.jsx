@@ -50,31 +50,31 @@ const CollectionRectangle = (props) => {
             </Slider>
           ) : (
             <Slider {...settings}>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
-              <div>
+              <div className="pr-[16px]">
                 <CardMovieNormal />
               </div>
             </Slider>

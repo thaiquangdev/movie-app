@@ -18,10 +18,9 @@ const CardRowTopic = () => {
               <Link
                 key={item.id}
                 to="#"
-                className="relative top-0 py-[1.2rem] pr-[2.5rem] pl-[1.5rem] rounded-[0.75rem] overflow-hidden justify-between 
-    bg-[radial-gradient(at_left_top,_rgba(255,255,255,0.8)_30%,_rgba(255,111,111,0.79)_100%)] hover:top-[-0.6rem] transition-all duration-300"
+                className="relative top-0 py-[1.2rem] pr-[2.5rem] pl-[1.5rem] rounded-[0.75rem] overflow-hidden justify-between hover:top-[-0.6rem] transition-all duration-300"
               >
-                <div className="bg-[#324fd1] absolute inset-0 z-0 opacity-80"></div>
+                <div className="bg-[#324fd1] absolute top-0 left-0 right-0 bottom-0 z-[1] mask-liner-gradiant"></div>
 
                 <div className="relative z-10 min-h-[110px] w-full h-full gap-[0.7rem] flex flex-col items-start justify-end">
                   <div className="font-bold text-[1.6rem] leading-[1.3] text-white line-clamp-2">
