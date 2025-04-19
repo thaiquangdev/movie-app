@@ -2,8 +2,9 @@ export const navBars = [
   {
     id: 1,
     title: "Chủ đề",
+    path: "chu-de",
   },
-  { id: 2, title: "Duyệt phim", path: "duyet-phim" },
+  { id: 2, title: "Duyệt tìm", path: "duyet-tim" },
   { id: 3, title: "Phim lẻ", path: "phim-le" },
   { id: 4, title: "Phim bộ", path: "phim-bo" },
   {
