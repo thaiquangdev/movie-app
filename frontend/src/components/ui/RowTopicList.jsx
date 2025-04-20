@@ -1,18 +1,13 @@
 import { Link } from "react-router-dom";
-import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import { IoIosArrowForward } from "react-icons/io";
+
 import CardMovieLong from "./CardMovieLong";
+import CustomSlider from "./CustomSlider";
 
 const RowTopicList = () => {
-  var settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-  };
+  const movies = [...Array(10).keys()].map((i) => (
+    <div>{<CardMovieLong key={i} />}</div>
+  ));
 
   return (
     <div className="px-[20px]">
@@ -35,26 +30,11 @@ const RowTopicList = () => {
               </div>
             </div>
             <div className="relative w-[calc(100%-200px)]">
-              <Slider {...settings}>
-                <div>
-                  <CardMovieLong />
-                </div>
-                <div>
-                  <CardMovieLong />
-                </div>
-                <div>
-                  <CardMovieLong />
-                </div>
-                <div>
-                  <CardMovieLong />
-                </div>
-                <div>
-                  <CardMovieLong />
-                </div>
-                <div>
-                  <CardMovieLong />
-                </div>
-              </Slider>
+              <CustomSlider
+                items={movies}
+                slidesPerView={3}
+                spaceBetween={16}
+              />
             </div>
           </div>
         </div>

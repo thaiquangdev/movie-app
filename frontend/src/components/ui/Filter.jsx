@@ -12,13 +12,13 @@ import {
 } from "../../utils/FilterData";
 import FilterElement from "./FilterElement";
 
-const Filter = () => {
-  const [showFilter, setShowFilter] = React.useState(true);
+const Filter = ({ showFil = false }) => {
+  const [showFilter, setShowFilter] = React.useState(showFil);
 
   // Hàm xử lý mở đóng filter
-  const handleViewFilter = React.useCallback(() => {
+  const handleViewFilter = () => {
     setShowFilter((prev) => !prev);
-  }, [showFilter]);
+  };
 
   return (
     <div className="mb-8">

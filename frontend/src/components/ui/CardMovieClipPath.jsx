@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CardMovieClipPath = (props) => {
   return (
-    <div className="w-full flex flex-col gap-3 pr-[16px] relative">
+    <div className="w-full flex flex-col gap-3 relative">
       <Link className="w-full pb-[150%] relative rounded-[0.5rem] overflow-hidden block bg-transparent group">
         <div
           className="absolute top-0 left-0 bottom-0 right-0 group-hover:bg-primary"

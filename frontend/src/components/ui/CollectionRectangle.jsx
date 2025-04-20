@@ -1,25 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowForward } from "react-icons/io";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
 import CardMovieNormal from "./CardMovieNormal";
 import CardMovieRectangle from "./CardMovieRectangle";
+import CustomSlider from "./CustomSlider";
 
 const CollectionRectangle = (props) => {
-  const settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: props.view ? 3 : 7,
-    slidesToScroll: 1,
-    draggable: true,
-    swipe: true,
-    touchMove: true,
-  };
+  const movies1 = [...Array(10).keys()].map((i) => (
+    <div>{<CardMovieRectangle key={i} />}</div>
+  ));
+  const movies2 = [...Array(10).keys()].map((i) => (
+    <div>{<CardMovieNormal key={i} />}</div>
+  ));
   return (
-    <div className="effect-fade-in">
+    <div className="animate-fadeInUp">
       <div className="px-[20px] mx-auto">
         <div className="flex items-center justify-start gap-4 relative min-h-[44px] mb-[1.2rem]">
           <h2 className="text-[1.8em] leading-[1.4] font-semibold text-white shadow-md">
@@ -34,50 +28,19 @@ const CollectionRectangle = (props) => {
         </div>
         <div>
           {props.view ? (
-            <Slider {...settings}>
-              <div>
-                <CardMovieRectangle />
-              </div>
-              <div>
-                <CardMovieRectangle />
-              </div>
-              <div>
-                <CardMovieRectangle />
-              </div>
-              <div>
-                <CardMovieRectangle />
-              </div>
-            </Slider>
+            <CustomSlider
+              items={movies1}
+              slidesPerView={3}
+              spaceBetween={16}
+              btnView={false}
+            />
           ) : (
-            <Slider {...settings}>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-              <div className="pr-[16px]">
-                <CardMovieNormal />
-              </div>
-            </Slider>
+            <CustomSlider
+              items={movies2}
+              slidesPerView={7}
+              spaceBetween={16}
+              btnView={false}
+            />
           )}
         </div>
       </div>

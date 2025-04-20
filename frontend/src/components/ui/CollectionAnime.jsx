@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const CollectionAnime = () => {
   return (
-    <div className="effect-fade-in">
+    <div className="animate-fadeInUp">
       <div className="px-[20px] mx-auto">
         <div className="flex items-center justify-start gap-4 relative min-h-[44px] mb-[1.2rem]">
           <h2 className="text-[1.8em] leading-[1.4] font-semibold text-white shadow-md">
@@ -21,7 +21,7 @@ const CollectionAnime = () => {
         </div>
         <div>
           <div className="2xl:h-[500px] h-[460px] rounded-[1.2rem] relative overflow-hidden">
-            <div className="bg-bg3 absolute top-0 right-0 left-0 bottom-0 w-full h-full collection-anime">
+            <div className="bg-bg3 absolute top-0 right-0 left-0 bottom-0 w-full h-full before:content-[''] before:absolute before:left-0 before:right-0 before:bottom-0 before:top-0 before:bg-[url('https://www.rophim.me/images/dotted.png')] before:bg-no-repeat before:opacity-[0.2] before:z-[1]">
               <div className="w-[calc(100%-500px)] h-full left-auto right-0 max-w-[1900px] absolute top-0 mask-gradient-left">
                 <div className="relative w-full h-full">
                   <img

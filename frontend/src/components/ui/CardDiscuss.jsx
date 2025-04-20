@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const CardDiscuss = () => {
   return (
-    <div className="mr-[16px] flex-shrink-0 block relative group">
+    <div className="flex-shrink-0 block relative group">
       <div className="flex relative gap-4 items-stretch p-[1.2rem] rounded-[0.6rem] overflow-hidden">
         <div className="absolute top-0 left-0 bottom-0 right-0 opacity-50 group-hover:opacity-70">
           <img

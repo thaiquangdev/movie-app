@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const CardMovieRectangle = () => {
   return (
-    <div className="pr-[16px] flex-shrink-0 h-full relative">
+    <div className=" flex-shrink-0 h-full relative">
       <div className="relative">
         <Link className="pb-[45%] w-full h-0 relative rounded-[0.5rem] overflow-hidden block bg-bg3">
           <div className="absolute bottom-0 left-[120px] z-30 flex justify-between items-stretch rounded-tl-[0.3rem] rounded-tr-[0.3rem] overflow-hidden shadow-md">

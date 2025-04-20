@@ -6,10 +6,10 @@ import { IoIosArrowForward } from "react-icons/io";
 
 const RowEvent = () => {
   return (
-    <div className="effect-fade-in">
+    <div className="animate-fadeInUp">
       <div className="px-[20px]">
         <div className="xl:gap-2 w-full h-[350px] mt-[1rem] bg-[#fedaa8] rounded-[1rem] relative flex gap-4 items-center">
-          <div className="absolute top-0 bottom-0 left-0 w-[600px] rounded-tl-[1rem] rounded-bl-[1rem] overflow-hidden hero-behind"></div>
+          <div className="absolute top-0 bottom-0 left-0 w-[600px] rounded-tl-[1rem] rounded-bl-[1rem] overflow-hidden before:content-[''] before:absolute before:bg-[url(https://www.rophim.me/images/event_304/behind-hero.webp)] before:bg-cover before:opacity-[0.5] before:top-0 before:left-[-120px] before:w-full before:h-full before:bg-top before:z-[2]"></div>
           <div className="flex-shrink-0 w-[350px] h-[350px] bg-[url('https://www.rophim.me/images/event_304/hero.webp')] bg-cover bg-[50%] relative z-10">
             <div className="w-[203px] h-[180px] bg-[url('https://www.rophim.me/images/event_304/vn-flag-full.gif')] bg-[50%] left-[48px] top-[-30px] transform rotate-[-23deg] absolute bg-cover"></div>
           </div>
@@ -21,7 +21,7 @@ const RowEvent = () => {
             />
             <div>
               <Link
-                to="#"
+                to="/ngay-giai-phong-mien-nam"
                 className="shadow-md z-40 relative w-full bg-white text-black border border-white text-[16px] gap-[0.6rem] py-[0.7rem] px-[1.5rem] rounded-[0.5rem] min-h-[50px] inline-flex font-medium items-center justify-between hover:opacity-90 transition-all"
               >
                 <span className="text-center whitespace-normal">

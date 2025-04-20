@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "classnames": "^2.5.1",
     "path": "^0.12.7",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
@@ -17,7 +18,8 @@
     "react-router-dom": "^7.4.1",
     "react-slick": "^0.30.3",
     "scss": "^0.2.4",
-    "slick-carousel": "^1.8.1"
+    "slick-carousel": "^1.8.1",
+    "swiper": "^11.2.6"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

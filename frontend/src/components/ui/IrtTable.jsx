@@ -1,26 +1,14 @@
 import React from "react";
 import { BiSolidMovie } from "react-icons/bi";
 import { FaArrowTrendUp, FaHeartCircleCheck, FaBolt } from "react-icons/fa6";
-import { FaPlay } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
+import IrtCommentNew from "./IrtCommentNew";
+import CustomSlider from "./CustomSlider";
 
 const IrtTable = () => {
-  var settings = {
-    vertical: true,
-    verticalSwiping: true,
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 4,
-    slidesToScroll: 1,
-
-    autoplay: true,
-    autoplaySpeed: 3000, // 3 giây
-    pauseOnHover: true,
-  };
+  const comments = [...Array(10).keys()].map((i) => (
+    <div>{<IrtCommentNew key={i} />}</div>
+  ));
   return (
     <div className="flex items-stretch justify-between">
       <div className="flex-1 py-6 px-8">
@@ -240,135 +228,15 @@ const IrtTable = () => {
           <FaBolt className="text-primary" size={20} />
           <span>Bình luận mới</span>
         </div>
-        <div className="relative">
-          <Slider {...settings}>
-            <div className="">
-              <Link className="flex flex-col justify-center h-[68px] gap-[0.2rem] py-[0.6rem] pr-[0.8rem] pl-[calc(30px+1.6rem)] rounded-[0.6rem] bg-[#0005] border border-transparent text-textBase">
-                <div className="w-[30px] h-[30px] flex-shrink-0 absolute top-[18px] left-[0.8rem] rounded-[50%] overflow-hidden">
-                  <img
-                    src="https://www.rophim.me/images/avatars/pack1/05.jpg"
-                    alt=""
-                    className="absolute w-full h-full top-0 right-0 bottom-0 left-0 object-cover "
-                  />
-                </div>
-                <div className="text-[12px] line-clamp-1">
-                  <span>Thái Quang</span>
-                  Yeol oppa hình mẫu lý tưởng 😋
-                </div>
-                <div className="text-[12px] leading-[1.5] text-[#fff5] inline-flex items-center gap-1">
-                  <small>
-                    <FaPlay className="text-primary" />
-                  </small>
-                  <span className="line-clamp-1">Đừng cử động</span>
-                </div>
-              </Link>
-            </div>
-            <div className="">
-              <Link className="flex flex-col justify-center h-[68px] gap-[0.2rem] py-[0.6rem] pr-[0.8rem] pl-[calc(30px+1.6rem)] rounded-[0.6rem] bg-[#0005] border border-transparent text-textBase">
-                <div className="w-[30px] h-[30px] flex-shrink-0 absolute top-[18px] left-[0.8rem] rounded-[50%] overflow-hidden">
-                  <img
-                    src="https://www.rophim.me/images/avatars/pack1/05.jpg"
-                    alt=""
-                    className="absolute w-full h-full top-0 right-0 bottom-0 left-0 object-cover "
-                  />
-                </div>
-                <div className="text-[12px] line-clamp-1">
-                  <span>Thái Quang</span>
-                  Yeol oppa hình mẫu lý tưởng 😋
-                </div>
-                <div className="text-[12px] leading-[1.5] text-[#fff5] inline-flex items-center gap-1">
-                  <small>
-                    <FaPlay className="text-primary" />
-                  </small>
-                  <span className="line-clamp-1">Đừng cử động</span>
-                </div>
-              </Link>
-            </div>
-            <div className="">
-              <Link className="flex flex-col justify-center h-[68px] gap-[0.2rem] py-[0.6rem] pr-[0.8rem] pl-[calc(30px+1.6rem)] rounded-[0.6rem] bg-[#0005] border border-transparent text-textBase">
-                <div className="w-[30px] h-[30px] flex-shrink-0 absolute top-[18px] left-[0.8rem] rounded-[50%] overflow-hidden">
-                  <img
-                    src="https://www.rophim.me/images/avatars/pack1/05.jpg"
-                    alt=""
-                    className="absolute w-full h-full top-0 right-0 bottom-0 left-0 object-cover "
-                  />
-                </div>
-                <div className="text-[12px] line-clamp-1">
-                  <span>Thái Quang</span>
-                  Yeol oppa hình mẫu lý tưởng 😋
-                </div>
-                <div className="text-[12px] leading-[1.5] text-[#fff5] inline-flex items-center gap-1">
-                  <small>
-                    <FaPlay className="text-primary" />
-                  </small>
-                  <span className="line-clamp-1">Đừng cử động</span>
-                </div>
-              </Link>
-            </div>
-            <div className="">
-              <Link className="flex flex-col justify-center h-[68px] gap-[0.2rem] py-[0.6rem] pr-[0.8rem] pl-[calc(30px+1.6rem)] rounded-[0.6rem] bg-[#0005] border border-transparent text-textBase">
-                <div className="w-[30px] h-[30px] flex-shrink-0 absolute top-[18px] left-[0.8rem] rounded-[50%] overflow-hidden">
-                  <img
-                    src="https://www.rophim.me/images/avatars/pack1/05.jpg"
-                    alt=""
-                    className="absolute w-full h-full top-0 right-0 bottom-0 left-0 object-cover "
-                  />
-                </div>
-                <div className="text-[12px] line-clamp-1">
-                  <span>Thái Quang</span>
-                  Yeol oppa hình mẫu lý tưởng 😋
-                </div>
-                <div className="text-[12px] leading-[1.5] text-[#fff5] inline-flex items-center gap-1">
-                  <small>
-                    <FaPlay className="text-primary" />
-                  </small>
-                  <span className="line-clamp-1">Đừng cử động</span>
-                </div>
-              </Link>
-            </div>
-            <div className="">
-              <Link className="flex flex-col justify-center h-[68px] gap-[0.2rem] py-[0.6rem] pr-[0.8rem] pl-[calc(30px+1.6rem)] rounded-[0.6rem] bg-[#0005] border border-transparent text-textBase">
-                <div className="w-[30px] h-[30px] flex-shrink-0 absolute top-[18px] left-[0.8rem] rounded-[50%] overflow-hidden">
-                  <img
-                    src="https://www.rophim.me/images/avatars/pack1/05.jpg"
-                    alt=""
-                    className="absolute w-full h-full top-0 right-0 bottom-0 left-0 object-cover "
-                  />
-                </div>
-                <div className="text-[12px] line-clamp-1">
-                  <span>Thái Quang</span>
-                  Yeol oppa hình mẫu lý tưởng 😋
-                </div>
-                <div className="text-[12px] leading-[1.5] text-[#fff5] inline-flex items-center gap-1">
-                  <small>
-                    <FaPlay className="text-primary" />
-                  </small>
-                  <span className="line-clamp-1">Đừng cử động</span>
-                </div>
-              </Link>
-            </div>
-            <div className="">
-              <Link className="flex flex-col justify-center h-[68px] gap-[0.2rem] py-[0.6rem] pr-[0.8rem] pl-[calc(30px+1.6rem)] rounded-[0.6rem] bg-[#0005] border border-transparent text-textBase">
-                <div className="w-[30px] h-[30px] flex-shrink-0 absolute top-[18px] left-[0.8rem] rounded-[50%] overflow-hidden">
-                  <img
-                    src="https://www.rophim.me/images/avatars/pack1/05.jpg"
-                    alt=""
-                    className="absolute w-full h-full top-0 right-0 bottom-0 left-0 object-cover "
-                  />
-                </div>
-                <div className="text-[12px] line-clamp-1">
-                  <span>Thái Quang</span>
-                  Yeol oppa hình mẫu lý tưởng 😋
-                </div>
-                <div className="text-[12px] leading-[1.5] text-[#fff5] inline-flex items-center gap-1">
-                  <small>
-                    <FaPlay className="text-primary" />
-                  </small>
-                  <span className="line-clamp-1">Đừng cử động</span>
-                </div>
-              </Link>
-            </div>
-          </Slider>
+        <div className="relative h-[282px] overflow-hidden">
+          <CustomSlider
+            items={comments}
+            slidesPerView={4}
+            spaceBetween={4}
+            direction
+            autoPlay
+            btnView={false}
+          />
         </div>
       </div>
     </div>

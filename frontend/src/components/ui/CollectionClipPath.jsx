@@ -1,26 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { IoIosArrowForward } from "react-icons/io";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Slider from "react-slick";
-import CardMovieNormal from "./CardMovieNormal";
 import CardMovieClipPath from "./CardMovieClipPath";
+import CustomSlider from "./CustomSlider";
 
 const CollectionClipPath = (props) => {
-  var settings = {
-    dots: false,
-    infinite: false,
-    speed: 500,
-    slidesToShow: 5,
-    slidesToScroll: 1,
-
-    draggable: true, // bật kéo chuột
-    swipe: true, // bật vuốt (cảm ứng)
-    touchMove: true, // bật drag trên mobile
-  };
+  const movies = [...Array(10).keys()].map((i) => (
+    <div>{<CardMovieClipPath key={i} index={i + 1} />}</div>
+  ));
   return (
-    <div className="effect-fade-in">
+    <div className="animate-fadeInUp">
       <div className="px-[20px] mx-auto">
         <div className="flex items-center justify-start gap-4 relative min-h-[44px] mb-[1.2rem]">
           <h2 className="text-[1.8em] leading-[1.4] font-semibold text-white shadow-md">
@@ -28,35 +15,12 @@ const CollectionClipPath = (props) => {
           </h2>
         </div>
         <div>
-          <Slider {...settings}>
-            <div>
-              <CardMovieClipPath index={1} />
-            </div>
-            <div>
-              <CardMovieClipPath index={2} />
-            </div>
-            <div>
-              <CardMovieClipPath index={3} />
-            </div>
-            <div>
-              <CardMovieClipPath index={4} />
-            </div>
-            <div>
-              <CardMovieClipPath index={5} />
-            </div>
-            <div>
-              <CardMovieClipPath index={6} />
-            </div>
-            <div>
-              <CardMovieClipPath index={7} />
-            </div>
-            <div>
-              <CardMovieClipPath index={8} />
-            </div>
-            <div>
-              <CardMovieClipPath index={9} />
-            </div>
-          </Slider>
+          <CustomSlider
+            items={movies}
+            slidesPerView={5}
+            spaceBetween={16}
+            btnView={false}
+          />
         </div>
       </div>
     </div>

@@ -19,6 +19,21 @@ export default {
         bg5: "#535D8E",
         footer: "#0F111A",
       },
+      animation: {
+        fadeInUp: "fadeInUp 0.5s ease-out forwards",
+      },
+      keyframes: {
+        fadeInUp: {
+          "0%": {
+            opacity: "0",
+            transform: "translateY(30px)",
+          },
+          "100%": {
+            opacity: "1",
+            transform: "translateY(0)",
+          },
+        },
+      },
     },
   },
   plugins: [
@@ -36,6 +51,15 @@ export default {
             "linear-gradient(180deg, black -10%, rgba(0, 0, 0, .1))",
           "mask-image":
             "linear-gradient(180deg, black -10%, rgba(0, 0, 0, .1))",
+        },
+        ".mask-image": {
+          "--webkit-mask-image":
+            "linear-gradient(0deg, transparent 0, black 60px)",
+          "mask-image": "linear-gradient(0deg, transparent 0, black 60px)",
+        },
+        ".mask-image-event": {
+          "--webkit-mask-image": "linear-gradient(0deg, transparent 0, black)",
+          "mask-image": "linear-gradient(0deg, transparent 0, black)",
         },
       });
     },

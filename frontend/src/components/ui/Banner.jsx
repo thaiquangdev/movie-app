@@ -35,7 +35,7 @@ const Banner = () => {
           <Link to="#">Daredevil: Born Again</Link>
         </h3>
         <div className="flex items-center justify-start flex-wrap gap-[0.6rem] mb-[0.75rem]">
-          <div className="bg-transparent border border-primary rounded-[0.33rem] text-white font-medium leading-[24px] text-[12px] px-[0.4rem] flex-shrink-0 inline-flex items-center imdb-badge">
+          <div className="bg-transparent border border-primary rounded-[0.33rem] text-white font-medium leading-[24px] text-[12px] px-[0.4rem] flex-shrink-0 inline-flex items-center before:content-['IMDb'] before:text-primary before:relative before:font-medium before:pr-[4px] before:text-[10px] before:leading-[1]">
             <span>8.4</span>
           </div>
           <div className="bg-white text-black font-medium flex overflow-hidden leading-[26px] px-2 flex-shrink-0 rounded-[0.33rem] items-center text-[12px]">
@@ -77,7 +77,7 @@ const Banner = () => {
             Marvel
           </Link>
         </div>
-        <div className="text-[1em] leading-[1.6] text-white font-normal mb-8 lim-3">
+        <div className="text-[1em] leading-[1.6] text-white font-normal mb-8 line-clamp-3">
           Matt Murdock, một luật sư mù với khả năng đặc biệt, chiến đấu cho công
           lý thông qua công ty luật sầm uất của mình. Trong khi cựu trùm mafia
           Wilson Fisk theo đuổi những nỗ lực chính trị của riêng mình ở New
